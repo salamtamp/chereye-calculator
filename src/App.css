@@ -1,0 +1,62 @@
+body {
+  font-family: 'Kanit', sans-serif !important;
+}
+
+.App {
+  padding: 20px;
+}
+
+.App-logo {
+  height: 120px;
+}
+
+.App-header {
+  height: 150px;
+  padding: 20px;
+  color: brown;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App .Logo {
+  text-align: center;
+}
+
+.App .Header {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.App .Form {
+  border: 2px solid brown;
+  border-radius: 8px;
+  padding: 20px 5px;
+  margin-top: 15px;
+}
+
+.App .Total {
+  border: 2px solid brown;
+  border-radius: 8px;
+  padding: 15px 12px 5px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.App .Total b {
+  color: brown;
+}
+
+.App input {
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
