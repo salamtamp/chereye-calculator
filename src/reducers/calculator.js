@@ -67,9 +67,6 @@ const initialState = {
 };
 
 const calculatorReducer = (state = initialState, action) => {
-  console.log('calculatorReducer');
-  console.log('action:', action);
-
   if (action.type === 'UPDATE_PRICE') {
     const { menus } = state;
     const { id, price } = action.payload;

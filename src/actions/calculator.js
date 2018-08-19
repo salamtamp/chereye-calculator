@@ -23,9 +23,23 @@ const updateOrder = () => ({
   type: UPDATE_ORDER,
 });
 
+const updatePriceWithUpdateTotalAndOrder = (id, price) => (dispatch) => {
+  dispatch(updatePrice(id, price))
+  dispatch(updateOrder());
+  dispatch(updateTotal());
+};
+
+const updateAmountWithUpdateTotalAndOrder = (id, amount) => (dispatch) => {
+  dispatch(updateAmount(id, amount))
+  dispatch(updateOrder());
+  dispatch(updateTotal());
+};
+
 export {
   updatePrice,
   updateTotal,
   updateAmount,
   updateOrder,
+  updatePriceWithUpdateTotalAndOrder,
+  updateAmountWithUpdateTotalAndOrder
 };

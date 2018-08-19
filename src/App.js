@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Container,
   Row,
+  Col,
 } from 'reactstrap';
 
 import logo from './images/chereye_logo.jpg';
@@ -13,21 +14,31 @@ const App = () => (
   <div className="App">
     <Container>
       <Row className="Logo">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Col>
+          <img src={logo} className="App-logo" alt="logo" />
+        </Col>
       </Row>
     </Container>
     <Container>
       <Row className="Header">
-        <h2>ตารางคำนวณราคา</h2>
+        <Col>
+          <h2>ตารางคำนวณราคา</h2>
+        </Col>
       </Row>
       <Row className="Form">
-        <Calculator />
+        <Col>
+          <Calculator />
+        </Col>
       </Row>
       <Row className="Form">
-        <Receipt />
+        <Col>
+          <Receipt />
+        </Col>
       </Row>
       <Row className="Total">
-        <Total />
+        <Col>
+          <Total />
+        </Col>
       </Row>
     </Container>
   </div>

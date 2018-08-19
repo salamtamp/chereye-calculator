@@ -1,21 +1,27 @@
 import React from 'react';
 import {
   Row,
+  Col,
 } from 'reactstrap';
 
 import Number from '../utils/Number';
 
 const rowStyle = {
-  paddingTop: 15,
-  textAlign: 'center'
+  paddingTop: 10,
+  textAlign: 'center',
+};
+
+const colStyle = {
+  textAlign: 'center',
 };
 
 const Total = ({ total }) => (
   <Row style={rowStyle}>
-    <h4>
-      รวมเป็นเงิน:
-      <b>{ Number.format(total) } บาท</b>
-    </h4>
+    <Col style={colStyle}>
+      <h4>
+        รวมเป็นเงิน: <b>{ Number.format(total) } บาท</b>
+      </h4>
+    </Col>
   </Row>
 );
 

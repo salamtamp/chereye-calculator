@@ -8,14 +8,15 @@ import {
 import Number from '../utils/Number';
 
 const rowStyle = {
-  paddingTop: 15,
-  textAlign: 'center'
+  textAlign: 'center',
 };
 
 const Receipt = ({ orders }) => {
   const noOrder = (
     <Row style={rowStyle}>
-      - ยังไม่มีรายการ -
+      <Col>
+        - ยังไม่มีรายการ -
+      </Col>
     </Row>
   );
 

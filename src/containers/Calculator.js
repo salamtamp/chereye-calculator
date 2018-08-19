@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { Calculator } from '../components';
 import {
-  updatePrice,
   updateTotal,
-  updateAmount,
   updateOrder,
+  updatePriceWithUpdateTotalAndOrder,
+  updateAmountWithUpdateTotalAndOrder,
 } from '../actions/calculator';
 
 const mapStateToProps = (state) => ({
@@ -12,8 +12,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePrice: (id, price) => dispatch(updatePrice(id, price)),
-  updateAmount: (id, amount) => dispatch(updateAmount(id, amount)),
+  updatePrice: (id, price) => dispatch(updatePriceWithUpdateTotalAndOrder(id, price)),
+  updateAmount: (id, amount) => dispatch(updateAmountWithUpdateTotalAndOrder(id, amount)),
   updateTotal: () => dispatch(updateTotal()),
   updateOrder: () => dispatch(updateOrder()),
 });
