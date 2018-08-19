@@ -1,0 +1,4 @@
+export const UPDATE_PRICE = 'UPDATE_PRICE';
+export const UPDATE_TOTAL = 'UPDATE_TOTAL';
+export const UPDATE_AMOUNT = 'UPDATE_AMOUNT';
+export const UPDATE_ORDER = 'UPDATE_ORDER';

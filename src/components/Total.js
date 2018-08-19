@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Row,
-  Col,
 } from 'reactstrap';
 
-class Total extends Component {
-  render() {
-    const price = this.props.price;
+import Number from '../utils/Number';
 
-    return (
-      <Row>
-        <Col xs={12}>
-          <h4>รวมเป็นเงิน: <b>{ price.toLocaleString() } บาท</b></h4>
-        </Col>
-      </Row>
-    )
-  }
-}
+const rowStyle = {
+  paddingTop: 15,
+  textAlign: 'center'
+};
+
+const Total = ({ total }) => (
+  <Row style={rowStyle}>
+    <h4>
+      รวมเป็นเงิน:
+      <b>{ Number.format(total) } บาท</b>
+    </h4>
+  </Row>
+);
 
 export default Total;
