@@ -67,7 +67,7 @@ const initialState = {
 };
 
 const calculatorReducer = (state = initialState, action) => {
-  if (action.type === 'UPDATE_PRICE') {
+  if (action.type === UPDATE_PRICE) {
     const { menus } = state;
     const { id, price } = action.payload;
     const newMenus = menus.map(menu => {
@@ -78,7 +78,7 @@ const calculatorReducer = (state = initialState, action) => {
       ...state,
       menus: newMenus,
     };
-  } else if (action.type === 'UPDATE_ORDER') {
+  } else if (action.type === UPDATE_ORDER) {
     const { menus } = state;
     const orders = menus.filter(menu => {
       return menu.amount > 0;
@@ -88,7 +88,7 @@ const calculatorReducer = (state = initialState, action) => {
       ...state,
       orders,
     };
-  } else if (action.type === 'UPDATE_TOTAL') {
+  } else if (action.type === UPDATE_TOTAL) {
     const { orders } = state;
     const total = orders.reduce((sum, menu) => {
       return sum + (menu.price * menu.amount);
@@ -98,7 +98,7 @@ const calculatorReducer = (state = initialState, action) => {
       ...state,
       total,
     };
-  } else if (action.type === 'UPDATE_AMOUNT') {
+  } else if (action.type === UPDATE_AMOUNT) {
     const { menus } = state;
     const { id, amount } = action.payload;
     const newMenus = menus.map(menu => {
