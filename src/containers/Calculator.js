@@ -8,13 +8,13 @@ import {
 } from '../actions/calculator';
 
 const mapStateToProps = (state) => ({
-  menus: state.menus,
+  menus: state.calculator.menus,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePrice: () => dispatch(updatePrice()),
+  updatePrice: (id, price) => dispatch(updatePrice(id, price)),
+  updateAmount: (id, amount) => dispatch(updateAmount(id, amount)),
   updateTotal: () => dispatch(updateTotal()),
-  updateAmount: () => dispatch(updateAmount()),
   updateOrder: () => dispatch(updateOrder()),
 });
 

@@ -60,7 +60,7 @@ const Calculator = (props) => {
             name="amount"
             placeholder="จำนวน"
             value={ amount || '' }
-            onChange={updateAmount}
+            onChange={ e => updateAmount(id, e.target.value) }
           />
         </Col>
       </Row>

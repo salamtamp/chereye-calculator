@@ -10,12 +10,13 @@ const updatePrice = (id, price) => ({
   payload: { id, price },
 });
 
-const updateTotal = () => ({
-  type: UPDATE_TOTAL,
+const updateAmount = (id, amount) => ({
+  type: UPDATE_AMOUNT,
+  payload: { id, amount },
 });
 
-const updateAmount = () => ({
-  type: UPDATE_AMOUNT,
+const updateTotal = () => ({
+  type: UPDATE_TOTAL,
 });
 
 const updateOrder = () => ({

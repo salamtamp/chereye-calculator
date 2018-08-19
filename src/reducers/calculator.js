@@ -1,7 +1,7 @@
 import {
   UPDATE_PRICE,
-  UPDATE_TOTAL,
   UPDATE_AMOUNT,
+  UPDATE_TOTAL,
   UPDATE_ORDER,
 } from '../actions/types';
 
@@ -67,11 +67,45 @@ const initialState = {
 };
 
 const calculatorReducer = (state = initialState, action) => {
+  console.log('calculatorReducer');
+  console.log('action:', action);
+
   if (action.type === 'UPDATE_PRICE') {
     const { menus } = state;
     const { id, price } = action.payload;
     const newMenus = menus.map(menu => {
-      return menu.id === id ? { ...menu, price }: menu;
+      return menu.id === id ? { ...menu, price: Number(price) }: menu;
+    });
+
+    return {
+      ...state,
+      menus: newMenus,
+    };
+  } else if (action.type === 'UPDATE_ORDER') {
+    const { menus } = state;
+    const orders = menus.filter(menu => {
+      return menu.amount > 0;
+    });
+
+    return {
+      ...state,
+      orders,
+    };
+  } else if (action.type === 'UPDATE_TOTAL') {
+    const { orders } = state;
+    const total = orders.reduce((sum, menu) => {
+      return sum + (menu.price * menu.amount);
+    }, 0);
+
+    return {
+      ...state,
+      total,
+    };
+  } else if (action.type === 'UPDATE_AMOUNT') {
+    const { menus } = state;
+    const { id, amount } = action.payload;
+    const newMenus = menus.map(menu => {
+      return menu.id === id ? { ...menu, amount: Number(amount) }: menu;
     });
 
     return {
